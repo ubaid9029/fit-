@@ -1,4 +1,4 @@
-import 'package:atfit/vedio.dart';
+import 'package:atfit/vid.dart';
 import 'package:flutter/material.dart';
 
 class Card22 extends StatefulWidget {
@@ -19,7 +19,7 @@ class _Card22State extends State<Card22> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => Vedio(),
+            builder: (context) => ChewieDemo(),
           ),
         );
       },
