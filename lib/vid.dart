@@ -1,26 +1,15 @@
 import 'package:chewie/chewie.dart';
-// import 'package:chewie/src/chewie_player.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:video_player/video_player.dart';
 
-void main() {
-  runApp(
-    ChewieDemo(),
-  );
-}
-
 class ChewieDemo extends StatefulWidget {
   ChewieDemo({this.title = 'Day 1 exercise'});
 
   final String title;
-  // final Controller =
-  //     AnimationController(vsync: this, duration: Duration(seconds: 2));
-  // final animation = Tween(
-  //   begin: 0.0,
-  //   end: 1.0,
-  // ).animate(controller);
+
   @override
   State<StatefulWidget> createState() {
     return _ChewieDemoState();
@@ -50,8 +39,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
   Future<void> initializePlayer() async {
     _videoPlayerController1 =
         VideoPlayerController.asset('assets/vedios/ved2.mp4');
-    // _videoPlayerController1 = VideoPlayerController.network(
-    //     'https://assets.mixkit.co/videos/preview/mixkit-forest-stream-in-the-sunlight-529-large.mp4');
+
     await _videoPlayerController1.initialize();
     _videoPlayerController2 =
         VideoPlayerController.asset('assets/vedios/ved1.mp4');
@@ -60,8 +48,6 @@ class _ChewieDemoState extends State<ChewieDemo> {
       videoPlayerController: _videoPlayerController1,
       autoPlay: false,
       looping: true,
-      // Try playing around with some of these other options:
-
       showControls: true,
       materialProgressColors: ChewieProgressColors(
         playedColor: Colors.red,
@@ -88,7 +74,9 @@ class _ChewieDemoState extends State<ChewieDemo> {
       home: Scaffold(
         appBar: AppBar(
           leading: BackButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             color: Color(0xFFFF9b31),
           ),
           title: Text(
